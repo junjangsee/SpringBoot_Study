@@ -1,4 +1,4 @@
-# 3. 자동 설정 이해
+# 자동 설정 이해
 ## @SpringBootApplication
 > `@SpringBootApplication`은 세개의 어노테이션이 합쳐져 있음  
 - `@SpringBootConfiguration`

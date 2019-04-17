@@ -1,4 +1,4 @@
-# 4. 자동 설정 만들기
+# 자동 설정 만들기
 > SpringBoot 프로젝트 정의 패턴
 - Xxx-Spring-Boot-Autoconfigure 모듈: 자동 설정
 - Xxx-Spring-Boot-Starter 모듈: 필요한 의존성 정의

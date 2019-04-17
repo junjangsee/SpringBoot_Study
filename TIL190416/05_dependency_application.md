@@ -1,4 +1,4 @@
-# 2. 의존성 관리 응용
+# 의존성 관리 응용
 
 ## SpringBoot가 버전 관리를 하는 의존성 추가 예시 
 - spring-boot-starter-data-jpa dependency 추가
