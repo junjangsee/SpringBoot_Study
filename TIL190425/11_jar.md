@@ -42,6 +42,3 @@ mvn package -DskipTests
 ```bash
 java -jar xxx.jar
 ```
-×
-Drag and Drop
-The image will be downloaded by Fatkun
