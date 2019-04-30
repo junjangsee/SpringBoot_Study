@@ -46,6 +46,3 @@ public class Application {
     }
 }
 ```
-×
-Drag and Drop
-The image will be downloaded by Fatkun
