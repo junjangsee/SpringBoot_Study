@@ -36,12 +36,12 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-featu
 > 해결법은 똑같이 properties 를 맞춰주거나 아래의 세가지 방법으로 해결함  
 #### 4순위 방법 `@SpringBootTest` Annotation에 properties 직접 지정
 ```java
-@SpringBootTest(properties = "freelife.age=2")
+@SpringBootTest(properties = "junjang.age=2")
 ```
 
 #### 3순위 방법으로 `@TestPropertySource`에 properties 직접 지정
 ```java
-@TestPropertySource(properties = {"freelife.name=superman", "freelife.age=23"})
+@TestPropertySource(properties = {"junjang.name=superman", "junjang.age=23"})
 ```
 
 #### 2순위 방법 `@TestPropertySource`에 추가로 생성한 `test.properties` 파일 locations 지정
@@ -64,8 +64,8 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-featu
 
 ## 플레이스 홀더
 > 위에서 사용한 변수는 재사용할 수 있음
-- name = freelife
-- fullName = ${name} baik
+- name = junjang
+- fullName = ${name} Kim
 
 ## Command Line Application 끄는법
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-command-line-args

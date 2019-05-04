@@ -53,6 +53,3 @@ spring.profiles.include=proddb
 ```
 freelife.db-name=prod db
 ```
-×
-Drag and Drop
-The image will be downloaded by Fatkun
