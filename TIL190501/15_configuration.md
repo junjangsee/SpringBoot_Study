@@ -18,7 +18,7 @@
 #### 기존방식 아래와 같이 했으나 자동으로 `@EnableConfigurationProperties` 설정이 되어있으므로 패스
 ```java
 @SpringBootApplication
-@EnableConfigurationProperties(FreelifeProperties.class)
+@EnableConfigurationProperties(junjangProperties.class)
 ```
 
 #### Properties 클래스에 `@Component` 설정을 하여 빈으로 만들어주기만 하면됨
@@ -30,13 +30,13 @@
 #### 아래와 같이 값을 주입받아 가져올 수 있음
 ```java
 @Autowired
-FreelifeProperties freelifeProperties;
+junjangProperties junjangProperties;
 
 @Override
 public void run(ApplicationArguments args) throws Exception {
     System.out.println("=======================");
-    System.out.println(freelifeProperties.getFullName());
-    System.out.println(freelifeProperties.getAge());
+    System.out.println(junjangProperties.getFullName());
+    System.out.println(junjangProperties.getAge());
     System.out.println("=======================");
 }
 ```
@@ -52,8 +52,8 @@ public void run(ApplicationArguments args) throws Exception {
 ### 프로퍼티 타입 컨버전 `@DurationUnit`
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-conversion-duration
   
-> SpringBoot가 제공하는 독특한한 컨버전 타입  
-> 시간정보를 받고 싶을 떄 아래의 타입을 잘 명시해주면 Annotation을 활용하지 않아도 시간정보를 잘가져옴  
+> SpringBoot가 제공하는 독특한 컨버전 타입  
+> 시간정보를 받고 싶을 때 아래의 타입을 잘 명시해주면 Annotation을 활용하지 않아도 시간정보를 잘가져옴  
 - `ns` for nanoseconds
 - `us` for microseconds
 - `ms` for milliseconds
