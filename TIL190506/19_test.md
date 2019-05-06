@@ -21,7 +21,7 @@ public class SampleController {
 @Service
 public class SampleService {
     public String getName() {
-        return "freelife";
+        return "junjang";
     }
 }
 ```
@@ -77,7 +77,7 @@ public class SampleControllerTest {
     public void hello() throws Exception {
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("hello freelife"))
+                .andExpect(content().string("hello junjang"))
                 .andDo(print());
     }
 }
@@ -101,7 +101,7 @@ public class SampleControllerRestTemplate {
     @Test
     public void hello() throws Exception {
         String result = testRestTemplate.getForObject("/hello", String.class);
-        assertThat(result).isEqualTo("hello freelife");
+        assertThat(result).isEqualTo("hello junjang");
     }
 }
 ```
