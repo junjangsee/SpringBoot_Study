@@ -91,9 +91,11 @@ public class SampleControllerTest {
 
 #### TestRestTemplate
 ```java
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class SampleControllerRestTemplate {
+public class SampleControllerTest {
 
     @Autowired
     TestRestTemplate testRestTemplate;
@@ -103,6 +105,7 @@ public class SampleControllerRestTemplate {
         String result = testRestTemplate.getForObject("/hello", String.class);
         assertThat(result).isEqualTo("hello junjang");
     }
+
 }
 ```
 
@@ -115,6 +118,13 @@ public class SampleControllerRestTemplate {
 > `@MockBean`으로 main의 Service를 가로채서 가상의 Test Service를 만들어줌  
 > 정말 간편하게 테스트 할 수 있게 해줌  
 ```java
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class SampleControllerTest {
+
     @Autowired
     TestRestTemplate testRestTemplate;
 
@@ -123,10 +133,12 @@ public class SampleControllerRestTemplate {
 
     @Test
     public void hello() throws Exception {
-        when(mockSampleService.getName()).thenReturn("mavel");
+        when(mockSampleService.getName()).thenReturn("kimjunhyeung");
         String result = testRestTemplate.getForObject("/hello", String.class);
-        assertThat(result).isEqualTo("hello mavel");
+        assertThat(result).isEqualTo("hello kimjunhyeung");
     }
+
+}
 ```
 
 #### WebTestClient
@@ -150,10 +162,10 @@ public class SampleControllerRestTemplate {
 
     @Test
     public void hello() throws Exception {
-        when(mockSampleService.getName()).thenReturn("ironman");
+        when(mockSampleService.getName()).thenReturn("kimjunhyeung");
         webTestClient.get().uri("/hello").exchange()
                 .expectStatus().isOk()
-                .expectBody(String.class).isEqualTo("hello ironman");
+                .expectBody(String.class).isEqualTo("hello kimjunhyeung");
     }
 ```
 
@@ -218,15 +230,45 @@ public class SampleControllerWebMvcTest {
 
     @Test
     public void hello() throws Exception {
-        when(mockSampleService.getName()).thenReturn("ironman"); // MockBean으로 주입한 Mock Service
+        when(mockSampleService.getName()).thenReturn("kimjunhyeung"); // MockBean으로 주입한 Mock Service
 
         mockMvc.perform(get("/hello")) // get 으로 /hello 요청하면
                 .andExpect(status().isOk()) // status 는 200 이고
-                .andExpect(content().string("hello ironman")) // content 는 hello ironman 이고
+                .andExpect(content().string("hello kimjunhyeung")) // content 는 hello kimjunhyeung 이고
                 .andDo(print()); // 해당 사항들을 print로 출력함
     }
 }
 ```
-×
-Drag and Drop
-The image will be downloaded by Fatkun
+
+### OutputCapture
+> 로그를 비롯해서 Console에 찍히는 모든 것을 다 캡쳐함
+> 로그 메세지가 어떻게 찍히는지 테스트 해볼 수 있음
+```java
+@RunWith(SpringRunner.class)
+@WebMvcTest(SampleController.class)
+public class SampleControllerWebMvcTest {
+
+    @Rule
+    public OutputCapture outputCapture = new OutputCapture();
+
+    @MockBean
+    SampleService mockSampleService;
+
+    @Autowired
+    MockMvc mockMvc;
+
+    @Test
+    public void hello() throws Exception {
+        when(mockSampleService.getName()).thenReturn("junjang"); // MockBean으로 주입한 Mock Service
+
+        mockMvc.perform(get("/hello")) // get 으로 /hello 요청하면
+                .andExpect(status().isOk()) // status 는 200 이고
+                .andExpect(content().string("hello junjang")) // content 는 hello junjang 이고
+                .andDo(print()); // 해당 사항들을 print로 출력함
+
+        assertThat(outputCapture.toString())
+                .contains("baeksu")
+                .contains("job");
+    }
+}
+```
