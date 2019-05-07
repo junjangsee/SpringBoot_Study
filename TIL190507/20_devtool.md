@@ -30,7 +30,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot
   - 리스타트 하고 싶지 않은 리소스는? spring.devtools.restart.exclude
   https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools-restart-exclude
 
-### livereload
+### Live Reload
 > Chrome 에서 서버가 재시작했을때 화면을 자동으로 갱신해주는 확장 프로그램
 - livereload 서버 끄기
 ```
