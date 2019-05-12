@@ -25,7 +25,7 @@
 
 ### 테스트
 > Access-Control-Allow-Origin 어떤 오리진이 server에 접근할 수 있는지 알려주는 Header 값  
-> server의 Access-Control-Allow-Origin Header 값을 Client에 보내서 매칭이 되면 요청이 가능함  
+> server의 Access-Control-Allow-Origin Header 값을 Client에 보내서 매칭이 되면 요청이 가능함  ㅇ
 
 ### Server
 1. 단일 CrossOrigin 허용 Server 테스트 코드
