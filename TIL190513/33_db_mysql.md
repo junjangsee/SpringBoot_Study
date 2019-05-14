@@ -1,4 +1,4 @@
-# 스프링 데이터 2부: MySQL
+# 스프링 데이터 : MySQL
 > DBCP란 Database Connection Pool  
 > DBCP에서 Database Connection을 만드는 과정이 많은 과정이 일어나는 작업임  
 > 그래서 Connection을 미리 여러개 만들어 놓고 필요할때 마다 그때그때 가져다가 쓰도록 하는 개념  
