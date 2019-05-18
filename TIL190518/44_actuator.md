@@ -14,7 +14,7 @@
 > 기존에는 jvisualvm이 java에서 제공을 했었는데 java10 부터 제공되지 않아서 별도로 설치해야됨  
 > Visual 로 jconsole 보다 훨씬 보기 좋은 UI를 제공함  
 ### mbean 플러그인 추가하기
-1. Tools - Plugins - Available Plugins - VisualVM-Mbeans 설치
+1. Tools - Plugins - Available Plugins - VisualVM - Mbeans 설치
 
 ## HTTP 사용하기
 - /actuator
