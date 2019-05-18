@@ -135,6 +135,3 @@ public class RestRunner implements ApplicationRunner {
     }
 }
 ```
-×
-Drag and Drop
-The image will be downloaded by Fatkun
